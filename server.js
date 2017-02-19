@@ -8,6 +8,17 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+app.get('/Mist0ne', function (req, res) {
+  res.sendFile(`mist one Arulprakash is displayed`);
+});
+
+app.get('/Misttwo', function (req, res) {
+  res.sendFile(`mist two Arulprakash is displayed`);
+});
+
+app.get('/Mistthird', function (req, res) {
+  res.sendFile(`mist third Arulprakash is displayed`);
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
