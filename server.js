@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/Mistone', function (req, res) {
-  res.send(`mist one Arulprakash is displayed`);
+  res.sendFile(path.join(__dirname, 'ui', 'ARP.html'));
 });
 
 app.get('/Misttwo', function (req, res) {
