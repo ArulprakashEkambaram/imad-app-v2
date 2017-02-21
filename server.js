@@ -13,11 +13,11 @@ app.get('/Mistone', function (req, res) {
 });
 
 app.get('/Misttwo', function (req, res) {
-  res.send(`mist two Arulprakash is displayed`);
+    res.sendFile(path.join(__dirname, 'ui', 'ARP 1.html'))
 });
 
 app.get('/Mistthird', function (req, res) {
-  res.send(`mist third Arulprakash is displayed`);
+  res.sendFile(path.join(__dirname,'ui','ARP 2.html'))
 });
 
 app.get('/ui/style.css', function (req, res) {
