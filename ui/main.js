@@ -1,6 +1,7 @@
 //counter code
-var buttton =document.getById('counter');
+var buttton =document.getElementById('counter');
 var counter = 0;
+
 button.onclick = function(){
     //Make a request to the counter endpoint
     
