@@ -23,7 +23,7 @@ app.get('test-db', function (req, res){
     //Return a response with results
   pool.query('SELECT*FROM text',function(err,result){
       if(err){
-          res.send(500).send(err,toString() );
+          res.send(500).send(err.toString() );
       } else{
           res.send(JSON.stringfy(result)); 
       }
