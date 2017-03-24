@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var pool = require('pg').pool;
+var crypto =require('crypto');
 
 var config = { 
     User: 'arulprakashekambaram',
@@ -17,6 +18,20 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+function hash(input,salt) {
+    //how do we create a hash?
+    var hashed= crypto.pdkdf25ync(input,salt,10000,512,'sha512');
+    return["pbkdf2","10000",salt,hashed.toString('hex')]. join('$');
+}
+ 
+app.get('/hash/:input', function(req,res){
+  var hashedstring= hash(req.params.input,'this-is-some-random-string');
+  res.send(hashedstring);
+    });
+
+
+
 var pool = new Pool(config);
 app.get('test-db', function (req, res){ 
     //make a select request
